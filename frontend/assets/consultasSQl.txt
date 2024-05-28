@@ -1,0 +1,87 @@
+SELECT 
+    cod_equipo,
+    fec_reg,
+    SUBSTRING(cod_almacen, 9) AS cod_almacen,
+    REPLACE(REPLACE(tip_equipo, 'Computador de ', ''), 'Computador ', '') AS tip_equipo,
+    piso_ubic,
+    serv_depar,
+    nom_custodio,
+    nom_custodio,
+    nom_usua
+FROM 
+    equipo
+WHERE 
+   nom_custodio <> "libre"
+   
+UPDATE equipo SET nom_usua = "Xavier Valencia" WHERE nom_usua = "XAVIER VALENCIA"
+
+
+
+SELECT * FROM equipo WHERE cod_almacen LIKE '%0055%'
+SELECT * FROM equipo WHERE piso_ubic = "SUBSUELO"
+SELECT * FROM param_piso, param_antivirus, param_memoria
+
+
+
+SELECT * FROM param_office
+            UNION ALL
+            SELECT * FROM param_antivirus
+            UNION ALL
+            SELECT * FROM param_memoria
+            
+            
+            
+SELECT *, 'param_antivirus' AS tabla_origen FROM param_antivirus
+UNION ALL
+SELECT *, 'param_memoria' AS tabla_origen FROM param_memoria
+ORDER BY tabla_origen;
+
+
+async/await
+
+----------- CONSULTAS NECESARIAS -----------
+UPDATE equipo
+SET tip_equipo = 'Escritorio'
+WHERE tip_equipo = 'Computador de Escritorio';
+
+UPDATE equipo
+SET tip_equipo = 'Portatil'
+WHERE tip_equipo = 'Computador Portatil';
+
+UPDATE param_tipo_equipo
+SET nom_te = 'Escritorio'
+WHERE nom_te = 'Computador de Escritorio';
+
+UPDATE param_servicio
+SET nom_servicio = 'DIRECCION ZONAL DE GOBERNANZA DE LA SALUD'
+WHERE nom_servicio = 'DIRECCION  ZONAL DE GOBERNANZA DE LA SALUD';
+
+UPDATE equipo
+SET serv_depar = 'DIRECCION ZONAL DE GOBERNANZA DE LA SALUD'
+WHERE serv_depar = 'DIRECCION  ZONAL DE GOBERNANZA DE LA SALUD';
+
+UPDATE equipo
+SET serv_depar = 'S1 BODEGA / ACTIVOS FIJOS'
+WHERE serv_depar = 'BODEGA / ACTIVOS FIJOS';
+
+UPDATE equipo
+SET serv_depar = 'PB SECRETARIA ZONAL'
+WHERE serv_depar = 'SECRETARIA ZONAL';
+
+UPDATE equipo
+SET serv_depar = 'PB DISPENSARIO'
+WHERE serv_depar = 'DISPENSARIO';
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,290 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tics - Portatil</title>
+    <!--=============== ICON ===============-->
+    <link rel="icon" type="image/png" href="assets/tics.ico">
+    <!--=============== CSS ===============-->
+    <link rel="stylesheet" href="./css/styles.css">
+    <!--=============== REMIXICONS ===============-->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.2.0/fonts/remixicon.css" rel="stylesheet">
+    <!--=============== JS ===============-->
+    <script src="./js/styles.js" defer></script>
+</head>
+
+<body>
+    <header class="header">
+        <nav class="nav container">
+            <div class="nav__data">
+                <a href="#" class="nav__logo">
+                    <i class="ri-planet-line"></i> TICS
+                </a>
+                <div class="nav__toggle" id="nav-toggle">
+                    <i class="ri-menu-line nav__burger"></i>
+                    <i class="ri-close-line nav__close"></i>
+                </div>
+            </div>
+            <!--=============== NAV MENU ===============-->
+            <div class="nav__menu" id="nav-menu">
+                <ul class="nav__list">
+                    <li><a href="index.html" class="nav__link">Registro</a></li>
+                    <!--=============== DROPDOWN 1 ===============-->
+                    <li class="dropdown__item">
+                        <div class="nav__link">
+                            Equipos <i class="ri-arrow-down-s-line dropdown__arrow"></i>
+                        </div>
+
+                        <ul class="dropdown__menu">
+                            <li>
+                                <a href="equipo.html" class="dropdown__link">
+                                    <i class="ri-computer-line"></i> Escritorio
+                                </a>
+                            </li>
+                            <li>
+                                <a href="portail.html" class="dropdown__link">
+                                    <i class="ri-cpu-line"></i> Portatil
+                                </a>
+                            </li>
+                            <li>
+                                <a href="impresora.html" class="dropdown__link">
+                                    <i class="ri-printer-line"></i> Impresora
+                                </a>
+                            </li>
+                            <li>
+                                <a href="telefono.html" class="dropdown__link">
+                                    <i class="ri-phone-line"></i> Telefono
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li><a href="parametro.html" class="nav__link">Parametros</a></li>
+                    <li><a href="#" class="nav__link">Reportes</a></li>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <table class="equipos">
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Fecha</th>
+                    <th>Cod. Almacén</th>
+                    <th>Tipo Eq.</th>
+                    <th>Piso Ubic.</th>
+                    <th>Dep. / Serv.</th>
+                    <th>Titular</th>
+                    <th>Técnico</th>
+                    <th>Editar</th>
+                </tr>
+            </thead>
+            <tbody id="resultsPortatil">
+            </tbody>
+        </table>
+    </main>
+
+    <div id="modal4" class="modal">
+        <div class="modal-content">
+            <form id="editarEquipo" class="formulario">
+                <h2>Ventan Prueba</h2>
+                <span class="close" onclick="cerrarVentanaEmergente('modal4')">&times;</span>
+                <div class="horizontal-container">
+                    <div>
+                        <div>
+                            <label for="cod">ID Equipo:</label>
+                            <span id="cod"></span>
+                        </div><br>
+                        <div>
+                            <label for="fecha">Fch. Entrega:</label>
+                            <span id="fecha"></span>
+                        </div><br>
+                        <div>
+                            <label for="tecnico">Técnico:</label>
+                            <span id="tecnico"></span>
+                        </div>
+                    </div>
+
+                    <div>
+                        <div>
+                            <label for="codAlmacen">Código Almacén:</label>
+                            <input type="text" id="codAlmacen" name="codAlmacen" class="newData">
+                        </div>
+                        <div>
+                            <label for="pisos">Piso Ubicado:</label>
+                            <select id="pisos" class="options"></select>
+                        </div>
+                    </div>
+
+                    <div colspan="2">
+                        <div>
+                            <label for="titularEq">Titular:</label>
+                            <input type="text" id="titularEq" name="titularEq" class="newData">
+                        </div>
+                        <div>
+                            <label for="departamentos">Dep./Serv.:</label>
+                            <select id="departamentos" class="options"></select>
+                        </div>
+                    </div>
+
+                    <div>
+                        <div>
+                            <label for="tipoEquipo">Tipo de Equipo:</label>
+                            <select id="tipoEquipo" class="options"></select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="horizontal-container">
+                    <!-- Botones -->
+                    <div class="buttons">
+                        <button type="button" class="green-button" onclick="guardarCambiosEq()">Guardar Equipo</button>
+                        <button type="button" class="orange-button" onclick="enviarBodega()">Guardar Bodega</button>
+                        <button type="button" class="green-button" onclick="mostrarFormulario('laptop')">Modificar</button>
+                        <!-- <button type="button" class="red-button" onclick="">Eliminar Equipo</button> -->
+                    </div>
+                </div>
+            </form>
+
+            <hr class="lines">
+            <div id="formLaptop" class="form-container" style="display: none;">
+                <h2>Edición de Componente PTL</h2>
+                <form id="editarLaptop" class="formulario">
+                    <div class="form-section">
+                        <div class="horizontal-container">
+                            <div>
+                                <div>
+                                    <label for="codigo">Cod. Laptop:</label>
+                                    <span id="codigo" name="codigo"></span>
+                                </div><br>
+                                <div>
+                                    <label for="tec">Técnico:</label>
+                                    <span id="tec" name="tec"></span>
+                                </div><br>
+                                <div>
+                                    <label for="codigoEq">Cod. Eq:</label>
+                                    <input type="text" id="codigoEq" name="codigoEq" class="newData"
+                                        style="width: 75px;">
+                                </div>
+                            </div>
+
+                            <div>
+                                <label for="codigotics">Cod. Tics :</label>
+                                <input type="text" id="codigotics" name="codigotics" class="newData">
+
+                                <label for="nombreHost">Host:</label>
+                                <input type="text" id="nombreHost" name="nombreHost" class="newData">
+                            </div>
+
+                            <div>
+                                <label for="numSerie">No. Serie Laptop:</label>
+                                <input type="text" id="numSerie" name="numSerie" class="newData">
+
+                                <label for="nomUsuario">Usuario:</label>
+                                <input type="text" id="nomUsuario" name="nomUsuario" class="newData">
+                            </div>
+
+                            <div>
+                                <div>
+                                    <label for="estado">Estado:</label>
+                                    <select id="estado" class="options"></select>
+                                </div>
+
+                                <div style="margin-top: -10px;">
+                                    <label for="marcas">Marca Laptop:</label>
+                                    <select id="marcas" class="options"></select>
+                                </div>
+                            </div>
+                        </div>
+
+                        <hr class="line">
+                        <div class="horizontal-container">
+                            <div>
+                                <div>
+                                    <label for="modelo">Modelo:</label>
+                                    <input type="text" id="modelo" name="modelo" class="newData">
+                                </div>
+
+                                <div class="horizontal-container">
+                                    <div>
+                                        <label for="ram">RAM:</label>
+                                        <select id="ram" class="options"></select>
+
+                                        <input type="checkbox" id="bluetooth" name="bluetooth">
+                                        <label for="bluetooth">Bluetooth</label>
+
+                                        <input type="checkbox" id="redFija" name="redFija">
+                                        <label for="redFija">Red Fija</label>
+                                    </div>
+
+                                    <div>
+                                        <label for="hdd">HDD:</label>
+                                        <select id="hdd" class="options"></select>
+
+                                        <input type="checkbox" id="lectorTarjeta">
+                                        <label for="lectorTarjeta">Lector Tar.</label>
+
+                                        <input type="checkbox" id="redInalam" name="redInalam">
+                                        <label for="redInalam">Red Inala.</label>
+                                    </div>
+                                </div>
+
+                            </div>
+
+                            <div>
+                                <label for="procesador">Procesador:</label>
+                                <select id="procesador" class="options"></select>
+
+                                <label for="velocidadProce">Velocidad Procesador:</label>
+                                <input type="text" id="velocidadProce" name="velocidadProce" class="newData">
+                            </div>
+
+                            <div>
+                                <label for="poseeAntivirus">Posee Antivirus:</label>
+                                <select id="poseeAntivirus" class="options">
+                                    <option value="SI">SI</option>
+                                    <option value="NO">NO</option>
+                                </select>
+
+                                <label for="antivirus">Nombre Antivirus:</label>
+                                <select id="antivirus" class="options"></select>
+
+                                <label for="verAntivirus">Versión Antivirus:</label>
+                                <input type="text" id="verAntivirus" name="verAntivirus" class="newData">
+                            </div>
+
+                            <div>
+                                <label for="office">Office:</label>
+                                <select id="office" class="options"></select>
+
+                                <label for="sisOperativo">Sistema Operativo:</label>
+                                <select id="sisOperativo" class="options"></select>
+
+                                <label for="disOpticos">Dispositivo Optico:</label>
+                                <select id="disOpticos" class="options"></select>
+                            </div>
+                        </div>
+
+                        <div class="horizontal-container">
+                            <div>
+                                <label for="observacionTxt">Observación:</label>
+                                <textarea id="observacionTxt" rows="2" cols="68"></textarea>
+                            </div>
+                            <div class="buttons">
+                                <button type="button" class="green-button" onclick="guardarCambiosPTL()">Guardar
+                                    Cambios CPU</button>
+
+                                <!-- <button type="button" class="red-button" onclick="">Eliminar CPU</button> -->
+                            </div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script src="./js/equipo.js"></script>
+</body>
+
+</html>

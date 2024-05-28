@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tics - Parametros</title>
+    <!--=============== ICON ===============-->
+    <link rel="icon" type="image/png" href="assets/tics.ico">
+    <!--=============== CSS ===============-->
+    <link rel="stylesheet" href="./css/styles.css">
+    <!--=============== REMIXICONS ===============-->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.2.0/fonts/remixicon.css" rel="stylesheet">
+    <!--=============== JS ===============-->
+    <script src="./js/styles.js" defer></script>
+</head>
+
+<body>
+    <header class="header">
+        <nav class="nav container">
+            <div class="nav__data">
+                <a href="#" class="nav__logo">
+                    <i class="ri-planet-line"></i> TICS
+                </a>
+                <div class="nav__toggle" id="nav-toggle">
+                    <i class="ri-menu-line nav__burger"></i>
+                    <i class="ri-close-line nav__close"></i>
+                </div>
+            </div>
+            <!--=============== NAV MENU ===============-->
+            <div class="nav__menu" id="nav-menu">
+                <ul class="nav__list">
+                    <li><a href="index.html" class="nav__link">Registro</a></li>
+                    <!--=============== DROPDOWN 1 ===============-->
+                    <li class="dropdown__item">
+                        <div class="nav__link">
+                            Equipos <i class="ri-arrow-down-s-line dropdown__arrow"></i>
+                        </div>
+
+                        <ul class="dropdown__menu">
+                            <li>
+                                <a href="equipo.html" class="dropdown__link">
+                                    <i class="ri-computer-line"></i> Escritorio
+                                </a>
+                            </li>
+                            <li>
+                                <a href="portail.html" class="dropdown__link">
+                                    <i class="ri-cpu-line"></i> Portatil
+                                </a>
+                            </li>
+                            <li>
+                                <a href="impresora.html" class="dropdown__link">
+                                    <i class="ri-printer-line"></i> Impresora
+                                </a>
+                            </li>
+                            <li>
+                                <a href="telefono.html" class="dropdown__link">
+                                    <i class="ri-phone-line"></i> Telefono
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li><a href="parametro.html" class="nav__link">Parametros</a></li>
+                    <li><a href="#" class="nav__link">Reportes</a></li>
+            </div>
+        </nav>
+    </header>
+
+    <div class="parametrosF">
+        <div class="sidebar">
+            <button type="button" class="edit-button" onclick="mostrarFormularios('antivirus')">Antivirus</button><!---->
+            <button type="button" class="edit-button" onclick="mostrarFormularios('cargo')">Cargo</button>
+            <button type="button" class="edit-button" onclick="mostrarFormularios('condicion')">Condición</button>
+            <button type="button" class="edit-button" onclick="mostrarFormularios('dispOpt')">Disp. Opt.</button>
+            <button type="button" class="edit-button" onclick="mostrarFormularios('estado')">Estado</button>
+            <button type="button" class="edit-button" onclick="mostrarFormularios('marcas')">Marcas</button> <!---->
+            <button type="button" class="edit-button" onclick="mostrarFormularios('memoria_ram')">RAM</button><!---->
+            <button type="button" class="edit-button" onclick="mostrarFormularios('numDisc')">Num Discos</button>
+            <button type="button" class="edit-button" onclick="mostrarFormularios('office')">Office</button> <!---->
+            <button type="button" class="edit-button" onclick="mostrarFormularios('pisos')">Pisos</button>
+            <button type="button" class="edit-button" onclick="mostrarFormularios('procesador')">Procesador</button><!---->
+            <button type="button" class="edit-button" onclick="mostrarFormularios('puerto')">Puertos</button>
+            <button type="button" class="edit-button" onclick="mostrarFormularios('servicios')">Serv. / Dep.</button><!---->
+            <button type="button" class="edit-button" onclick="mostrarFormularios('sisOpe')">Sis. Ope</button><!---->
+            <button type="button" class="edit-button" onclick="mostrarFormularios('disco')">Tam Disco</button> <!---->
+            <button type="button" class="edit-button" onclick="mostrarFormularios('tamMtr')">Tam Monitor</button>
+            <button type="button" class="edit-button" onclick="mostrarFormularios('tipEq')">Tipo Equipo</button>
+            <button type="button" class="edit-button" onclick="mostrarFormularios('tipImp')">Tipo Impresora</button>
+            <button type="button" class="edit-button" onclick="mostrarFormularios('tipMtr')">Tipo Monitor</button>
+            <button type="button" class="edit-button" onclick="mostrarFormularios('tipConex')">Tipo Conexión</button>
+            <!--tipo_mt-->
+        </div>
+
+        <main class="contenedor">
+            <div class="contenedor2">
+                <div id="content" class="content"></div>
+                <!-- Tablas de parámetros (ocultas por defecto) -->
+                <table id="tabla1" class="parametros" style="display: none;">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Antivirus</th>
+                            <th>Editar</th>
+                            <th>Eliminar</th>
+                        </tr>
+                    </thead>
+                    <tbody id="searchAntivirus"></tbody>
+                </table>
+
+                <table id="tabla2" class="parametros" style="display: none;">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Marca</th>
+                            <th>Editar</th>
+                            <th>Eliminar</th>
+                        </tr>
+                    </thead>
+                    <tbody id="searchMarcas"></tbody>
+                </table>
+
+                <table id="tabla3" class="parametros" style="display: none;">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Memoria Ram</th>
+                            <th>Editar</th>
+                            <th>Eliminar </th>
+                        </tr>
+                    </thead>
+                    <tbody id="searchMemoriaRam"></tbody>
+                </table>
+
+                <table id="tabla4" class="parametros" style="display: none;">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Office</th>
+                            <th>Editar</th>
+                            <th>Eliminar </th>
+                        </tr>
+                    </thead>
+                    <tbody id="searchOffice"></tbody>
+                </table>
+
+                <table id="tabla5" class="parametros" style="display: none;">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Procesador</th>
+                            <th>Editar</th>
+                            <th>Eliminar </th>
+                        </tr>
+                    </thead>
+                    <tbody id="searchProce"></tbody>
+                </table>
+
+                <table id="tabla6" class="parametros" style="display: none;">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Serv. / Dep.</th>
+                            <th>Editar</th>
+                            <th>Eliminar </th>
+                        </tr>
+                    </thead>
+                    <tbody id="searchServDep"></tbody>
+                </table>
+
+                <table id="tabla7" class="parametros" style="display: none;">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Sistema Operativo</th>
+                            <th>Editar</th>
+                            <th>Eliminar </th>
+                        </tr>
+                    </thead>
+                    <tbody id="searchSisOpe"></tbody>
+                </table>
+
+                <table id="tabla8" class="parametros" style="display: none;">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Disco Duro</th>
+                            <th>Editar</th>
+                            <th>Eliminar </th>
+                        </tr>
+                    </thead>
+                    <tbody id="searchDiscoDuro"></tbody>
+                </table>
+
+                <table id="tabla9" class="parametros" style="display: none;">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Cargo</th>
+                            <th>Editar</th>
+                            <th>Eliminar </th>
+                        </tr>
+                    </thead>
+                    <tbody id="searchCargo"></tbody>
+                </table>
+
+                <table id="tabla10" class="parametros" style="display: none;">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Condicion</th>
+                            <th>Editar</th>
+                            <th>Eliminar </th>
+                        </tr>
+                    </thead>
+                    <tbody id="searchCondi"></tbody>
+                </table>
+
+                <table id="tabla11" class="parametros" style="display: none;">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Dispositivo Optico</th>
+                            <th>Editar</th>
+                            <th>Eliminar </th>
+                        </tr>
+                    </thead>
+                    <tbody id="searchDispOpt"></tbody>
+                </table>
+
+                <table id="tabla12" class="parametros" style="display: none;">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Estado</th>
+                            <th>Editar</th>
+                            <th>Eliminar </th>
+                        </tr>
+                    </thead>
+                    <tbody id="searchEstado"></tbody>
+                </table>
+
+                <table id="tabla13" class="parametros" style="display: none;">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Número de Discos</th>
+                            <th>Editar</th>
+                            <th>Eliminar </th>
+                        </tr>
+                    </thead>
+                    <tbody id="searchNumDisc"></tbody>
+                </table>
+
+                <table id="tabla14" class="parametros" style="display: none;">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Pisos</th>
+                            <th>Editar</th>
+                            <th>Eliminar </th>
+                        </tr>
+                    </thead>
+                    <tbody id="searchPiso"></tbody>
+                </table>
+
+                <table id="tabla15" class="parametros" style="display: none;">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Puertos</th>
+                            <th>Editar</th>
+                            <th>Eliminar </th>
+                        </tr>
+                    </thead>
+                    <tbody id="searchPuerto"></tbody>
+                </table>
+
+                <table id="tabla16" class="parametros" style="display: none;">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Tamaño Monitor</th>
+                            <th>Editar</th>
+                            <th>Eliminar </th>
+                        </tr>
+                    </thead>
+                    <tbody id="searchTamMon"></tbody>
+                </table>
+
+                <table id="tabla17" class="parametros" style="display: none;">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Tipo de Equipo</th>
+                            <th>Editar</th>
+                            <th>Eliminar </th>
+                        </tr>
+                    </thead>
+                    <tbody id="searchTipEq"></tbody>
+                </table>
+
+                <table id="tabla18" class="parametros" style="display: none;">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Tipo de Impresora</th>
+                            <th>Editar</th>
+                            <th>Eliminar </th>
+                        </tr>
+                    </thead>
+                    <tbody id="searchTipImp"></tbody>
+                </table>
+
+                <table id="tabla19" class="parametros" style="display: none;">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Tipo de Monitor</th>
+                            <th>Editar</th>
+                            <th>Eliminar </th>
+                        </tr>
+                    </thead>
+                    <tbody id="searchTipMtr"></tbody>
+                </table>
+
+                <table id="tabla20" class="parametros" style="display: none;">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Tipo de Conexión</th>
+                            <th>Editar</th>
+                            <th>Eliminar </th>
+                        </tr>
+                    </thead>
+                    <tbody id="searchTipConex"></tbody>
+                </table>
+            </div>
+        </main>
+    </div>
+
+
+    <div id="modal2" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="cerrarVentanaEmergente('modal2')">&times;</span>
+            <h2>Edicion de Parametros</h2>
+
+            <!-- Agrega el nombre de la tabla y el campo -->
+            <div style="display: none;">
+                <p>Tabla: <span id="tablaMostrada"></span></p>
+                <p>Campo: <span id="campoMostrado"></span></p>
+            </div>
+
+            <form id="editarParametroForm" class="formulario">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="codigo">Código:</label>
+                        <span id="codigo" name="codigo"></span>
+                    </div>
+                    <div class="form-group">
+                        <label for="nombreActual">Nombre Actual:</label>
+                        <span id="nombreActual" name="nombreActual"></span>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="newNombre">Nuevo Nombre:</label>
+                    <input type="text" id="newNombre" name="newNombre" class="newData" required>
+                </div>
+                <div class="buttons">
+                    <button type="button" class="green-button"
+                        onclick="modificarNombre(document.getElementById('tablaMostrada').textContent, document.getElementById('campoMostrado').textContent, document.getElementById('nombreActual').textContent, document.getElementById('newNombre').value)">
+                        Guardar
+                    </button>
+                    <button type="button" class="cancel-button" onclick="cerrarVentanaEmergente('modal2')">
+                        Cancelar
+                    </button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script src="./js/parametro.js"></script>
+</body>
+
+</html>

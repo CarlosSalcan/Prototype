@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tics - Registro</title>
+    <!--=============== ICON ===============-->
+    <link rel="icon" type="image/png" href="assets/tics.ico">
+    <!--=============== CSS ===============-->
+    <link rel="stylesheet" href="./css/styles.css">
+    <!--=============== REMIXICONS ===============-->
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@3.2.0/fonts/remixicon.css" rel="stylesheet">
+    <!--=============== JS ===============-->
+    <script src="./js/styles.js" defer></script>
+</head>
+
+<body>
+    <header class="header">
+        <nav class="nav container">
+            <div class="nav__data">
+                <a href="#" class="nav__logo">
+                    <i class="ri-planet-line"></i> TICS
+                </a>
+                <div class="nav__toggle" id="nav-toggle">
+                    <i class="ri-menu-line nav__burger"></i>
+                    <i class="ri-close-line nav__close"></i>
+                </div>
+            </div>
+            <!--=============== NAV MENU ===============-->
+            <div class="nav__menu" id="nav-menu">
+                <ul class="nav__list">
+                    <li><a href="index.html" class="nav__link">Registro</a></li>
+                    <!--=============== DROPDOWN 1 ===============-->
+                    <li class="dropdown__item">
+                        <div class="nav__link">
+                            Equipos <i class="ri-arrow-down-s-line dropdown__arrow"></i>
+                        </div>
+
+                        <ul class="dropdown__menu">
+                            <li>
+                                <a href="equipo.html" class="dropdown__link">
+                                    <i class="ri-computer-line"></i> Escritorio
+                                </a>
+                            </li>
+                            <li>
+                                <a href="portail.html" class="dropdown__link">
+                                    <i class="ri-cpu-line"></i> Portatil
+                                </a>
+                            </li>
+                            <li>
+                                <a href="impresora.html" class="dropdown__link">
+                                    <i class="ri-printer-line"></i> Impresora
+                                </a>
+                            </li>
+                            <li>
+                                <a href="telefono.html" class="dropdown__link">
+                                    <i class="ri-phone-line"></i> Telefono
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li><a href="parametro.html" class="nav__link">Parametros</a></li>
+                    <li><a href="#" class="nav__link">Reportes</a></li>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <form id="nuevoParametroForm" class="registro">
+            <h2>Ingreso de Nuevo Parámetro</h2>
+            <div class="form-section">
+                <div>
+                    <label for="nombreParametro">Nombre del Parámetro:</label>
+                    <input type="text" id="nombreParametro" name="nombreParametro" class="newData">
+                </div>
+                <div>
+                    <label for="tablas">Tabla:</label>
+                    <select id="tablas" name="tablas" class="options">
+                        <option value="" disabled selected>Selecciona una opción</option>
+                        <option value="param_antivirus">Antivirus</option>
+                        <option value="param_marcas">Marcas</option>
+                        <option value="param_memoria">Memoria RAM</option>
+                        <option value="param_office">Office</option>
+                        <option value="param_procesador">Procesador</option>
+                        <option value="param_servicio">Servicio / Departamento</option>
+                        <option value="param_sis_ope">Sistema Operativo</option>
+                        <option value="param_tamano_hdd">Almacenamiento</option>
+                    </select>
+                </div>
+            </div><br>
+            <div class="buttons">
+                <button type="submit" class="green-button">Guardar Nuevo Parámetro</button>
+            </div>
+        </form>
+
+        <form id="nuevoEquipoForm" class="registroEq">
+            <div class="horizontal-container">
+                <div>
+                    <div>
+                        <label for="newCod">ID Equipo:</label>
+                        <span id="newCod"></span>
+                    </div><br>
+                    <div>
+                        <label for="newFecha">Fch. Entrega:</label>
+                        <span id="newFecha"></span>
+                    </div><br>
+                    <div>
+                        <label for="newTecnico">Técnico:</label>
+                        <span id="newTecnico"></span>
+                    </div>
+                </div>
+    
+                <div>
+                    <div>
+                        <label for="newCodAlmacen">Nuevo Cod Almacén:</label>
+                        <input type="text" id="newCodAlmacen" name="newCodAlmacen" class="newData">
+                    </div>
+                    <div>
+                        <label for="newPisos">Piso Destinado:</label>
+                        <select id="newPisos" class="options"></select>
+                    </div>
+    
+                </div>
+    
+                <div colspan="2">
+                    <div>
+                        <label for="newTitularEq">Titular:</label>
+                        <input type="text" id="newTitularEq" name="newTitularEq" class="newData">
+                    </div>
+                    <div>
+                        <label for="newDepartamentos">Dep./Serv.:</label>
+                        <select id="newDepartamentos" class="options"></select>
+                    </div>
+                </div>
+    
+                <div>
+                    <div>
+                        <label for="newTipoEquipo">Tipo de Equipo:</label>
+                        <select id="newTipoEquipo" class="options"></select>
+                    </div>
+                </div>
+            </div>
+    
+            <div class="horizontal-container">
+                <!-- Botones -->
+                <div class="buttons">
+                    <button type="button" class="green-button" onclick="">Entregar Nuevo Equipo</button>
+                </div>
+            </div>
+        </form>
+    </main>
+
+    <script src="./js/index.js"></script>
+</body>
+
+</html>
