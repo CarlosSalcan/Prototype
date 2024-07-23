@@ -28,20 +28,43 @@ La estructura de archivos del proyecto es la siguiente:
 ```plaintext
 Prototipos/
 │
-├── algoritmos/
-│   ├── java/
-│   └── cplusplus/
-│
-├── paginas_web/
-│   ├── prototipo_menu_lateral/
+├── inventario/
+│   ├── backend/
+│   │   ├── node_modules/
+│   │   ├── src/
+│   │   │ ├── controllers/
+│   │   │ │ ├── equipo.controller.js
+│   │   │ │ └── parametro.controller.js
+│   │   │ ├── models/
+│   │   │ ├── routers/
+│   │   │ │ └── router.server.js
+│   │   │ ├── connection.js
+│   │   │ └── server.js
+│   │   ├── package-lock.json
+│   │   └── package.json
+│   ├── frontend/
+│   │   ├── assets/
+│   │   │ └── consultasSQL.txt
+│   │   │ └── imagenes/
+│   │   ├── css/
+│   │   │ └── styles.css
+│   │   ├── js/
+│   │   │ ├── equipo.js
+│   │   │ ├── index.js
+│   │   │ └── parametro.js
+│   │   │ ├── styles.js
+│   │   ├── equipo.html
+│   │   ├── impresora.html
 │   │   ├── index.html
-│   │   ├── styles.css
-│   │   └── script.js
-│   └── otros/
+│   │   ├── login.html
+│   │   ├── parametro.html
+│   │   ├── portatil.html
+│   │   └── telefono.html
 │
-├── ejercicios/
-│
-└── README.md
+├── menu/
+│   ├── estilos.css
+│   │── index.html
+│   └── index.js
 ```
 ## Instalación 🗒️
 
